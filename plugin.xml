@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<plugin id="com.openlabs.cordova.binaryfilewriter" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>BinaryFileWriter</name>
+    <description>Write binary files</description>
+    <js-module name="BinaryFileWriter" src="www/binaryfilewriter.js">
+        <clobbers target="cordova.plugins.BinaryFileWriter" />
+    </js-module>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="BinaryFileWriter">
+                <param name="ios-package" value="BinaryFileWriter" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/BinaryFileWriter.h" />
+        <source-file src="src/ios/BinaryFileWriter.m" />
+
+        <framework src="AssetsLibrary.framework" />
+    </platform>
+</plugin>
